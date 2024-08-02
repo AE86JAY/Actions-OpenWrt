@@ -55,7 +55,6 @@ jobs:
       with:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
         event-type: Source Code Update
 
     - name: Delete workflow runs

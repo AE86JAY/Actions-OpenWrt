@@ -15,5 +15,6 @@
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-# echo 'src-git sundaqiang https://github.com/sundaqiang/openwrt-packages-backup' >>feeds.conf.default
-git clone https://github.com/sundaqiang/openwrt-packages-backup package/diy
+echo 'src-git sundaqiang https://github.com/sundaqiang/openwrt-packages-backup' >>feeds.conf.default
+# git clone https://github.com/sundaqiang/openwrt-packages-backup package/diy
+git clone https://github.com/AE86JAY/op-apps.git package/opapps

@@ -184,6 +184,7 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages
         sleep 2
+        mv *.itb ACRH17-lede_$(date +%Y.%m.%d-%H.%M)$(git rev-parse --short HEAD).itb
         mv *.bin ACRH17-lede_$(date +%Y.%m.%d-%H.%M)$(git rev-parse --short HEAD).bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT

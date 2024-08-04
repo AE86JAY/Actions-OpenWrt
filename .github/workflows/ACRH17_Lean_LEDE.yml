@@ -91,7 +91,7 @@ jobs:
 
     - name: Openwrt AutoUpdate
       run: |
-        TEMP=$(date +"RT-ACRH17_%Y%m%d_%H%M%S_")$(git rev-parse --short HEAD)
+        TEMP=ACRH17-lede_$(date +%Y.%m.%d-%H.%M)$(git rev-parse --short HEAD)
         echo "RELEASE_TAG=$TEMP" >> $GITHUB_ENV
         #required>>add "DISTRIB_GITHUB" to "zzz-default-settings"
         sed -i "/DISTRIB_DESCRIPTION=/a\sed -i '/DISTRIB_GITHUB/d' /etc/openwrt_release" openwrt/package/lean/default-settings/files/zzz-default-settings
@@ -183,6 +183,8 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        sleep 2
+        mv *.bin ACRH17-lede_$(date +%Y.%m.%d-%H.%M)$(git rev-parse --short HEAD).bin
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
         
